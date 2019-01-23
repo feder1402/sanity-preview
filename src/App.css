@@ -4,23 +4,14 @@
 header {
   background-color: #282c34;
   /* min-height: 100vh; */
+
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-main {
-  background-color: #fefeff;
-  min-height: 100vh;
-  /* display: flex; */
-  /* flex-direction: column;
-  align-items: left;
-  justify-content: left; */
-  font-size: calc(10px + 2vmin);
-  color: black;
 }
 
 footer {
@@ -37,3 +28,76 @@ footer {
 .App-link {
   color: #61dafb;
 }
+
+.card.addOn-card .card-border {
+  height:10px;
+  width:100%
+}
+
+.card.addOn-card .addon-card .form-check .price-wrapper .view-details {
+  text-decoration:underline
+}
+
+.card.addOn-card .addon-card .form-check .price-wrapper .addon-details,.card.addOn-card .addon-card .form-check .price-wrapper .addon-pricing { 
+  display:inline-block
+}
+@media (max-width:767px) {
+  .card.addOn-card .addon-card .form-check .price-wrapper .addon-details,.card.addOn-card .addon-card .form-check .price-wrapper .addon-pricing {
+    width:100%;
+    display:block
+  }
+}
+
+.card.addOn-card .addon-card .form-check .price-wrapper .addon-details {
+  width:60%;
+  vertical-align:top
+}
+
+.card.addOn-card .addon-card .form-check .price-wrapper .addon-details h3 {
+  margin:0
+}
+
+.card.addOn-card .addon-card .form-check .price-wrapper .addon-pricing {
+  text-align:right;
+  width:40%
+}
+
+@media (max-width:767px) {
+  .card.addOn-card .addon-card .form-check .price-wrapper .addon-pricing {
+    text-align:left
+  }
+}
+
+.card.addOn-card .addon-card .form-check .price-wrapper .addon-pricing .display-price {
+  font-size:20px
+}
+
+.card.addOn-card .addon-card .form-check .price-wrapper .addon-pricing .list-price {
+  text-decoration:line-through
+}
+
+.card.addOn-card .addon-card .form-check .form-check-label {
+  vertical-align:top
+}
+
+.card.addOn-card .addon-card .form-check .custom-control-description {
+  display:inline-block;
+  width:95%
+}
+
+@media (max-width:767px) {
+  .card.addOn-card .addon-card .form-check .custom-control-description {
+    width:80%
+  }
+}
+
+.card.addOn-card .addon-card .form-check .custom-checkbox {
+  vertical-align:middle;
+  padding-top:2px
+}
+
+.card.addOn-card .img-card h3 {
+  font-size:1.125rem
+}
+
+.card.addOn-card img{margin:15px 0}.card.addOn-card .dropdown .form-control .dropdown-details{display:none}.card.addOn-card .dropdown .form-control h5{margin-bottom:0}.card.addOn-card .dropdown ul{list-style-type:disc;padding-left:15px}.card.addOn-card .dropdown ul li{margin:0;line-height:20px}.card.addOn-card .dropdown .dropdown-pricing .text-secondary{font-weight:700}.card.addOn-card .dropdown .dropdown-menu{max-height:none;z-index:1001}.card.addOn-card .dropdown .dropdown-menu .selected-pricing{display:none}.card.addOn-card .dropdown .dropdown-menu h5{font-weight:700;margin-bottom:0}.card.addOn-card .dropdown .dropdown-menu a{border-bottom:1px solid #ccc}.card.addOn-card .dropdown .dropdown-item{white-space:normal}.card.addOn-card .card-block ul{-webkit-padding-start:15px;margin-bottom:0}.card.addOn-card .card-block ul li{margin-top:0;margin-bottom:0}

@@ -17,7 +17,7 @@ class Preview extends Component {
     }
 
     componentDidMount = () => {
-        const {id} = this.props;
+        const { id } = this.props;
         const QUERY = `*[_id == "${id}"]`
 
         _client
@@ -36,13 +36,28 @@ class Preview extends Component {
         const { error, isLoading, cards } = this.state
 
         return (
-            <div  className="row">
-            <div className="card ux-card addOn-card">
-                <Loading isLoading={isLoading} >
-                    {cards && <pre>{JSON.stringify(cards, null, 2)}</pre>}
-                    {error && <div>ERROR: JSON.stringify(error)}</div>}
-                </Loading>
-            </div>
+            <div className="col-lg-8 col-md-12 col-sm-12" id="stickyContainer">
+                <div className="row">
+                    <div className="row">
+                        <div className="card addOn-card">
+                            <div className="card-border bg-primary"></div>
+                            <div className="card-block">
+                                <Loading isLoading={isLoading} >
+                                    {cards &&
+                                        <div>
+                                            <h3 className="font-primary-bold">{cards[0].title}</h3>
+                                            <div>
+                                                <p><span>{cards[0].description}</span></p>
+                                                <h4 className="font-primary-bold">Select plan</h4>
+                                            </div>
+                                        </div>
+                                    }
+                                    {error && <div>ERROR: {JSON.stringify(error)}</div>}
+                                </Loading>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
