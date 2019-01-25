@@ -6,7 +6,8 @@ import Loading from './components/Loading'
 
 const _client = SanityClient({
     projectId: 's28bingf',
-    dataset: 'production'
+    dataset: 'production',
+    useCdn: false
 })
 
 class Preview extends Component {
@@ -48,7 +49,7 @@ class Preview extends Component {
                                             <h3 className="font-primary-bold">{cards[0].title}</h3>
                                             <div>
                                                 <p><span>{cards[0].description}</span></p>
-                                                <h4 className="font-primary-bold">Select plan</h4>
+                                                <code>Rest of content here (TBD)</code>
                                             </div>
                                         </div>
                                     }
