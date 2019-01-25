@@ -1,0 +1,38 @@
+[
+    {
+      "_createdAt": "2019-01-24T23:49:02Z",
+      "_id": "189f771f-9955-41f0-8d1e-e392e7f407d3",
+      "_rev": "4KPdxyeKLfFDx0f2RVabqL",
+      "_type": "card",
+      "_updatedAt": "2019-01-25T00:02:09Z",
+      "content": [
+        {
+          "_key": "b66b27153d19",
+          "_type": "header",
+          "level": 2,
+          "title": "One card plans"
+        },
+        {
+          "_key": "3a7b2417c845",
+          "_type": "plans",
+          "label": "Plans",
+          "plans": [
+            {
+              "_key": "b81efd1a9f4f",
+              "_type": "plan",
+              "description": "plan1 description",
+              "title": "plan1"
+            },
+            {
+              "_key": "bf8b23d81acf",
+              "_type": "plan",
+              "description": "plan2 description",
+              "title": "plan2"
+            }
+          ]
+        }
+      ],
+      "description": "One card description",
+      "title": "One card title"
+    }
+  ]

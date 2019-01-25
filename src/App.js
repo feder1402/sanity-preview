@@ -17,10 +17,6 @@ class App extends Component {
         <main className="container">
           <Preview id={getIdFromPaqth()} />
         </main>
-        <footer>
-          footer
-        </footer>
-
       </div>
     );
   }
