@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import SanityClient from '@sanity/client'
+import BlockContent from '@sanity/block-content-to-react'
+import Card from './components/card'
 import Loading from './components/Loading'
 
 // const QUERY = '*[_id == "0fff2380-57d1-40ba-97b4-59d3926116b1"]'
@@ -9,6 +11,16 @@ const _client = SanityClient({
     dataset: 'production',
     useCdn: false
 })
+
+const serializers = {
+    types: {
+        plans: props => (
+            <pre>
+                <code>{JSON.stringify(props, null, 2)}</code>
+            </pre>
+        )
+    }
+}
 
 class Preview extends Component {
     state = {
@@ -35,31 +47,13 @@ class Preview extends Component {
 
     render() {
         const { error, isLoading, cards } = this.state
-
         return (
-            <div className="col-lg-8 col-md-12 col-sm-12" id="stickyContainer">
-                <div className="row">
-                    <div className="row">
-                        <div className="card addOn-card">
-                            <div className="card-border bg-primary"></div>
-                            <div className="card-block">
-                                <Loading isLoading={isLoading} >
-                                    {cards &&
-                                        <div>
-                                            <h3 className="font-primary-bold">{cards[0].title}</h3>
-                                            <div>
-                                                <p><span>{cards[0].description}</span></p>
-                                                <code>Rest of content here (TBD)</code>
-                                            </div>
-                                        </div>
-                                    }
-                                    {error && <div>ERROR: {JSON.stringify(error)}</div>}
-                                </Loading>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Card>
+                <Loading isLoading={isLoading} >
+                    {cards && <BlockContent blocks={cards[0].content} serializers={serializers} />}
+                    {error && <div>ERROR: {JSON.stringify(error)}</div>}
+                </Loading>
+            </Card>
         )
     }
 }

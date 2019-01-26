@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.6",
     "@sanity/client": "^0.140.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
