@@ -31,27 +31,36 @@ class Preview extends Component {
 
     componentDidMount = () => {
         const { id } = this.props;
-        const QUERY = `*[_id == "${id}"]`
 
-        _client
-            .fetch(QUERY)
-            .then(cards => {
-                console.log(JSON.stringify(cards, null, 2))
-                this.setState({ isLoading: false, error: null, cards })
-            })
-            .catch(error => this.setState({ isLoading: false, error }))
+        if (id == null) {
+            this.setState({ isLoading: false, error: "ID of cards not passed in the URL" })
+        } else {
+            const QUERY = `*[_id == "${id}"]`
 
-        // Clear old images while loading new ones
-        this.setState({ isLoading: true, error: null, cards: null })
+            _client
+                .fetch(QUERY)
+                .then(cards => {
+                    console.log(JSON.stringify(cards, null, 2))
+                    this.setState({ isLoading: false, error: null, cards })
+                })
+                .catch(error => this.setState({ isLoading: false, error }))
+
+            // Clear old images while loading new ones
+            this.setState({ isLoading: true, error: null, cards: null })
+        }
     }
 
     render() {
         const { error, isLoading, cards } = this.state
+
+        if (error) {
+            return <div>ERROR: {JSON.stringify(error)}</div>
+        }
+
         return (
             <Card>
                 <Loading isLoading={isLoading} >
                     {cards && <BlockContent blocks={cards[0].content} serializers={serializers} />}
-                    {error && <div>ERROR: {JSON.stringify(error)}</div>}
                 </Loading>
             </Card>
         )
